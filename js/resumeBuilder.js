@@ -1,34 +1,4 @@
-/*
-
-$("#main").append("Tiffany Han");
-var awesomeThoughts = "I am Tiffany and I am AWESOME!";
-console.log(awesomeThoughts);
-
-// [string].replace([old],[new])
-var email = "hantiffany@udacity.com";
-var newEmail = email.replace("udacity", "gmail");
-console.log(email);
-console.log(newEmail);
-
-var funThoughts = awesomeThoughts.replace("AWESOME", "FUN");
-$("#main").append(funThoughts);
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-*/
-
-var email = "hantiffany@udacity.com";
-var formattedName = HTMLheaderName.replace(
-	"%data%", "Tiffany Han");
-var role = "Web Designer | Front-End Developer";
-var formattedRole = HTMLheaderRole.replace(
-	"%data%", role);
-var skills = ["HTML", "CSS", "Javascript", "teaching", "writing"];
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
+// add bio information
 var bio = {
 	"name" : "Tiffany Han",
 	"role" : "Web Designer | Front-End Developer",
@@ -40,9 +10,10 @@ var bio = {
 	},
 	"pictureURL" : "images/portfolio-pic.jpg",
 	"welcomeMessage" : "Welcome to my page!",
-	"skills" : skills
+	"skills" : ["HTML", "CSS", "Javascript", "teaching", "writing"]
 }
 
+// add work information
 var work = {
 	"jobs" : [
 		{
@@ -62,6 +33,7 @@ var work = {
 	]
 }
 
+// add projects information
 var projects = {
 	"myProjects" : [
 		{
@@ -91,6 +63,7 @@ var projects = {
 	]
 }
 
+// add education information
 var education = {
 	"schools" : [
 		{
@@ -130,40 +103,54 @@ var education = {
 	]
 }
 
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.cell);
-$("#topContacts").append(formattedMobile);
+/* ---------------- start BIO section -------------------- */
 
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts").append(formattedEmail);
+bio.displayBio = function() {
+	// add name and role to top of header
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedRole);
 
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#topContacts").append(formattedGithub);
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	$("#header").prepend(formattedName);
 
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").append(formattedLocation);
+	// add contacts section
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.cell);
+	$("#topContacts").append(formattedMobile);
 
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	$("#topContacts").append(formattedEmail);
 
-var formattedbioPic = HTMLbioPic.replace("%data%", bio.pictureURL);
-$("#header").append(formattedbioPic);
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+	$("#topContacts").append(formattedGithub);
 
-var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-$("#header").append(formattedWelcomeMessage);
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	$("#topContacts").append(formattedLocation);
 
+	// add bio pic
+	var formattedbioPic = HTMLbioPic.replace("%data%", bio.pictureURL);
+	$("#header").append(formattedbioPic);
 
-if (bio.skills.length > 0) {
-	$("#header").append(HTMLskillsStart);
+	// add welcome message
+	var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").append(formattedWelcomeMessage);
 
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
-	$("#skills").append(formattedSkill);
+	// add skills section
+	if (bio.skills.length > 0) {
+
+		$("#header").append(HTMLskillsStart);
+
+		for (skill in bio.skills) {
+
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+			$("#skills").append(formattedSkill);
+		}
+	}
 }
+
+// invoke funciton
+bio.displayBio();
+
+/* ---------------- start WORK section -------------------- */
 
 work.displayWork = function() {
 	for (each in work.jobs) {
@@ -185,10 +172,12 @@ work.displayWork = function() {
 	}
 }
 
+// invoke function
 work.displayWork();
 
-projects.displayProjects = function () {
+/* ---------------- start PROJECTS section -------------------- */
 
+projects.displayProjects = function () {
 	for (project in projects.myProjects) {
 		$("#projects").append(HTMLprojectStart);
 
@@ -206,9 +195,13 @@ projects.displayProjects = function () {
 	}
 }
 
+// invoke function
 projects.displayProjects();
 
+/* ---------------- start EDUCATION section -------------------- */
+
 education.displayEducation = function() {
+	// start brick and mortar schools section
 	for (school in education.schools) {
 		$("#education").append(HTMLschoolStart);
 
@@ -228,6 +221,7 @@ education.displayEducation = function() {
 		$(".education-entry:last").append(formattedMajor);
 	}
 
+	// start online courses section
 	$("#education").append(HTMLonlineClasses);
 
 	for (course in education.onlineCourses) {
@@ -247,7 +241,22 @@ education.displayEducation = function() {
 	}
 }
 
+// invoke funciton
 education.displayEducation();
+
+/* ------------------- add other things to footer ------------------- */
+
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.cell);
+$("#footerContacts").append(formattedMobile);
+
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+$("#footerContacts").append(formattedEmail);
+
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+$("#footerContacts").append(formattedGithub);
+
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#footerContacts").append(formattedLocation);
 
 
 $("#mapDiv").append(googleMap);
