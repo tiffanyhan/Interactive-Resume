@@ -1,0 +1,33 @@
+var bio = {
+	"name" : "Tiffany Han",
+	"role" : "Web Designer | Front-End DevelopeR",
+	"contacts" : {
+		"email" : "hantiffany@gmail.com",
+		"cell" : "six two six two one five seven nine four one",
+		"github" : "tiffanyhan",
+		"location" : "Los Angeles, CA"
+	},
+	"pictureURL" : "images/portfolio-pic.jpg",
+	"welcomeMessage" : "Welcome to my page!",
+	"skills" : skills
+}
+
+var HTMLheaderName = '<h1 id="name">%data%</h1>';
+var HTMLheaderRole = '<span>%data%</span><hr/>';
+
+var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
+var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
+var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
+var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
+var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+
+var HTMLbioPic = '<img src="%data%" class="biopic">';
+var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+
+  <div id="main">
+    <div id="header" class="center-content clearfix">
+      <ul id="topContacts" class='flex-box'></ul>
+    </div>
+    <div style='clear: both;'></div>
