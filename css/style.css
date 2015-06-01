@@ -1,7 +1,6 @@
 * {
   padding:0;
   margin:0;
-  font-family: 'Roboto', sans-serif;
 }
 
 .clearfix {
@@ -13,47 +12,87 @@
   padding-right: 5%;
 }
 
+.project-entry {
+  border-bottom: 1px solid black;
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+}
+
+.project-entry:last-of-type {
+  margin-bottom: 0;
+  border: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
 h1 {
   font-size: 40px;
-  color: #F5A623;
-  line-height: 48px;
-  display: inline;
+  line-height: 25px;
 }
 
 h2 {
-  font-weight: bold;
   font-size: 24px;
-  color: #999999;
   line-height: 29px;
   padding: 10px;
+  text-transform: uppercase;
 }
 
 h3 {
-  font-style: italic;
   font-size: 20px;
   color: #000000;
   line-height: 22px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  padding-top: 15px;
 }
 
 h4 {
-  font-weight: bold;
   font-size: 14px;
   color: #4A4A4A;
   line-height: 17px;
 }
 
-h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   padding:10px;
   padding-left: 5%;
-  padding-right: 5%;
+  font-weight: 300;
 }
 
+.title-border {
+  border-top: 2px solid black;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  color: black;
+  background-color: black;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+span.uppercase {
+  font-size: .8em;
+}
 
 .date-text {
   font-style: italic;
   font-size: 14px;
   color: #999999;
-  line-height: 16px;
+  line-height: 24px;
   float: left;
 }
 
@@ -63,20 +102,34 @@ h2, h3, h4, h5 {
   color: #999999;
   line-height: 16px;
   float: right;
-
 }
 
 p {
   font-size: 14px;
   color: #333333;
   line-height: 21px;
+  display: inline-block;
+  padding: 10px 0;
 }
 
 a {
-  color: #1199C3;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 20px;
   display: block;
+}
+
+a.course-link {
+  margin: 20px 0;
+  padding: 14px;
+  border: 1px solid black;
+  background-color: maroon;
+  color: beige;
+  display: inline-block;
+}
+
+em {
+  display: inline-block;
+  margin: 0 10px;
 }
 
 .welcome-message {
@@ -87,36 +140,30 @@ a {
 }
 
 #skillsH3 {
-  color: #F5AE23;
   display: none;
 }
 
-.orange {
-  background-color: #F5AE23;
-}
-
-.orange-text {
-  color: #F5AE23;
+.tan-light {
+  background-color: #eeefe5;
 }
 
 .white-text {
-  font-weight: bold;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .gray {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   padding-bottom: 10px;
   clear:both;
 }
 
-.dark-gray {
-  background-color: #4A4A4A;
+.green-muted {
+  background-color: #778472;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #778472;
 }
 
 .flex-box {
@@ -142,16 +189,18 @@ ul {
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
+  width: 150px;
+  height: 150px;
   display: none;
+  border-radius: 100px;
 }
 
 img {
-  padding: 10px;
-  height: 240px;
-  width: 320px;
-  border: 1px solid black;
-  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  display: block;
+  margin: 20px auto;
 }
 
 /* Bar chart stuff */
@@ -180,12 +229,6 @@ span {
   }
 }
 
-@media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
-}
-
 @media only screen and (max-width: 750px) {
   #letsConnect {
     margin-top: 10%;
@@ -195,6 +238,9 @@ span {
   }
   .welcome-message {
     display: none;
+  }
+  hr {
+    margin-top: 10px;
   }
 }
 
@@ -209,11 +255,16 @@ span {
   height: 400px;
   width: 100%;
   padding-bottom: 5%;
+  overflow: auto;
 }
 
 @media only screen and (min-width: 750px) {
   #skillsH3,
   .biopic {
     display: block;
+  }
+  h1,
+  .role {
+    display: inline;
   }
 }

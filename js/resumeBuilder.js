@@ -4,7 +4,7 @@ var bio = {
 	"role" : "Web Designer | Front-End Developer",
 	"contacts": {
 		"email" : "hantiffany@gmail.com",
-		"cell" : "six two six two one five seven nine four one",
+		"cell" : "(626) 215-sevenninefourone",
 		"github" : "tiffanyhan",
 		"location" : "Los Angeles, CA",
 	},
@@ -130,10 +130,6 @@ bio.displayBio = function() {
 	var formattedbioPic = HTMLbioPic.replace("%data%", bio.pictureURL);
 	$("#header").append(formattedbioPic);
 
-	// add welcome message
-	var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-	$("#header").append(formattedWelcomeMessage);
-
 	// add skills section
 	if (bio.skills.length > 0) {
 
@@ -206,10 +202,9 @@ education.displayEducation = function() {
 		$("#education").append(HTMLschoolStart);
 
 		var formattedName = HTMLschoolName.replace("%data%", education.schools[school].school);
-		$(".education-entry:last").append(formattedName);
-
 		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-		$(".education-entry:last").append(formattedDegree);
+		var formattedNameDegree = formattedName + formattedDegree;
+		$(".education-entry:last").append(formattedNameDegree);
 
 		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].graduation);
 		$(".education-entry:last").append(formattedDates);
@@ -228,10 +223,9 @@ education.displayEducation = function() {
 		$("#education").append(HTMLschoolStart);
 
 		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
-		$(".education-entry:last").append(formattedOnlineTitle);
-
 		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
-		$(".education-entry:last").append(formattedOnlineSchool);
+		var formattedTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
+		$(".education-entry:last").append(formattedTitleSchool);
 
 		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
 		$(".education-entry:last").append(formattedOnlineDates);
