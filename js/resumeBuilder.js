@@ -4,7 +4,7 @@ var bio = {
 	"role" : "Web Designer | Front-End Developer",
 	"contacts": {
 		"email" : "hantiffany@gmail.com",
-		"cell" : "(626) 215-sevenninefourone",
+		"cell" : "(626) 215-seven9fourone",
 		"github" : "tiffanyhan",
 		"location" : "Los Angeles, CA",
 	},

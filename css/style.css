@@ -1,15 +1,34 @@
 * {
   padding:0;
   margin:0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 .clearfix {
   overflow: auto;
 }
 
+#header,
+#workExperience,
+#projects,
+#education,
+#mapDiv,
+#letsConnect {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .education-entry, .work-entry, .project-entry {
   padding-left: 5%;
   padding-right: 5%;
+}
+
+.work-entry, .project-entry {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .project-entry {
@@ -29,7 +48,7 @@ body {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 36px;
   line-height: 25px;
 }
 
@@ -104,6 +123,10 @@ span.uppercase {
   float: right;
 }
 
+.school-city {
+  display: none;
+}
+
 p {
   font-size: 14px;
   color: #333333;
@@ -125,6 +148,7 @@ a.course-link {
   background-color: maroon;
   color: beige;
   display: inline-block;
+  width: 130px;
 }
 
 em {
@@ -162,16 +186,23 @@ em {
 }
 
 /* TODO: Replace with image later */
-#header {
+#header,
+#main {
   background-color: #778472;
 }
 
 .flex-box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   flex-direction: row;
+  -webkit-flex-direction: row;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   justify-content: space-around;
+  -webkit-justify-content: space-around;
   padding: 10px;
 }
 
@@ -223,16 +254,13 @@ span {
   text-align: center;
 }
 
-@media only screen and (max-width: 1024px) {
-  #letsConnect {
-    margin-top: 5%;
+@media only screen and (min-width: 500px) {
+  h1 {
+    font-size: 48px;
   }
 }
 
 @media only screen and (max-width: 750px) {
-  #letsConnect {
-    margin-top: 10%;
-  }
   .biopic {
     width: 150px;
   }
@@ -258,6 +286,30 @@ span {
   overflow: auto;
 }
 
+@media screen and (min-width: 600px) {
+  #education {
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+  }
+
+  .education-entry {
+    width: 50%
+  }
+
+  .title-border {
+    width: 100%;
+  }
+
+  .online {
+    text-align: center;
+  }
+
+  a.online.course-link {
+    display: block;
+    margin: 20px auto;
+  }
+}
+
 @media only screen and (min-width: 750px) {
   #skillsH3,
   .biopic {
@@ -266,5 +318,13 @@ span {
   h1,
   .role {
     display: inline;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  #header,
+  #letsConnect {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
   }
 }
