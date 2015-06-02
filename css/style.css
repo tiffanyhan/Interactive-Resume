@@ -1,3 +1,5 @@
+/* ---------------- general things ------------------- */
+
 * {
   padding:0;
   margin:0;
@@ -10,185 +12,10 @@
   overflow: auto;
 }
 
-#header,
-#workExperience,
-#projects,
-#education,
-#mapDiv,
-#letsConnect {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.education-entry, .work-entry, .project-entry {
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-.work-entry, .project-entry {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.project-entry {
-  border-bottom: 1px solid black;
-  margin-bottom: 25px;
-  padding-bottom: 5px;
-}
-
-.project-entry:last-of-type {
-  margin-bottom: 0;
-  border: 0;
-}
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 300;
-}
-
-h1 {
-  font-size: 36px;
-  line-height: 25px;
-}
-
-h2 {
-  font-size: 24px;
-  line-height: 29px;
-  padding: 10px;
-  text-transform: uppercase;
-}
-
-h3 {
-  font-size: 20px;
-  color: #000000;
-  line-height: 22px;
-  text-transform: uppercase;
-  margin-top: 15px;
-  padding-top: 15px;
-}
-
-h4 {
-  font-size: 14px;
-  color: #4A4A4A;
-  line-height: 17px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  padding:10px;
-  padding-left: 5%;
-  font-weight: 300;
-}
-
-.title-border {
-  border-top: 2px solid black;
-}
-
-hr {
-  border: 0;
-  height: 1px;
-  color: black;
-  background-color: black;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-span.uppercase {
-  font-size: .8em;
-}
-
-.date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999999;
-  line-height: 24px;
-  float: left;
-}
-
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999999;
-  line-height: 16px;
-  float: right;
-}
-
-.school-city {
-  display: none;
-}
-
-p {
-  font-size: 14px;
-  color: #333333;
-  line-height: 21px;
-  display: inline-block;
-  padding: 10px 0;
-}
-
-a {
-  text-decoration: none;
-  margin-top: 20px;
-  display: block;
-}
-
-a.course-link {
-  margin: 20px 0;
-  padding: 14px;
-  border: 1px solid black;
-  background-color: maroon;
-  color: beige;
-  display: inline-block;
-  width: 130px;
-}
-
-em {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #F3F3F3;
-  line-height: 28px;
-}
-
-#skillsH3 {
-  display: none;
-}
-
-.tan-light {
-  background-color: #eeefe5;
-}
-
-.white-text {
-  color: #ffffff;
-}
-
-.gray {
-  background-color: #f3f3f3;
-  padding-bottom: 10px;
-  clear:both;
-}
-
-.green-muted {
-  background-color: #778472;
-}
-
-/* TODO: Replace with image later */
-#header,
-#main {
-  background-color: #778472;
 }
 
 .flex-box {
@@ -213,8 +40,198 @@ em {
   padding-bottom: 2.5%
 }
 
+/* ----------------- main sections -------------------- */
+
+.header,
+.workExperience,
+.projects,
+.education,
+.mapDiv,
+.letsConnect {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header,
+.main,
+.letsConnect {
+  background-color: #778472;
+}
+
+.workExperience,
+.education {
+  background-color: #f3f3f3;
+  padding-bottom: 10px;
+  clear: both;
+}
+
+.projects,
+.mapDiv {
+    background-color: #eeefe5;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  color: black;
+  background-color: black;
+  margin-top: 10px;
+}
+
+/*-------------- main entry sections --------------- */
+
+.education-entry,
+.work-entry,
+.project-entry {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.work-entry,
+.project-entry {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-entry {
+  border-bottom: 1px solid black;
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+}
+
+.project-entry:last-of-type {
+  margin-bottom: 0;
+  border: 0;
+}
+
+/*----------------- headings --------------------*/
+
+h1 {
+  font-size: 36px;
+  line-height: 25px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 29px;
+  text-transform: uppercase;
+  width: 100%;
+  border-top: 2px solid black;
+}
+
+h3 {
+  font-size: 20px;
+  color: #000;
+  line-height: 22px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  padding:10px;
+  padding-left: 5%;
+  font-weight: 300;
+}
+
+.name,
+.role {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* --- more specific things showing up throughout the page --- */
+
+.contact-keys {
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+.date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 24px;
+  float: left;
+}
+
+.location-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+  float: right;
+}
+
+.contact-values,
+.skill-items {
+  color: #fff;
+}
+
+p {
+  font-size: 14px;
+  color: #333;
+  line-height: 21px;
+  display: inline-block;
+  padding: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  margin-top: 20px;
+  display: block;
+  color: black;
+}
+
 ul {
   list-style-type: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  display: block;
+  margin: 20px auto;
+}
+
+span {
+  padding: 5px;
+}
+
+/* --- more specific things showing up in only one main section of page --- */
+
+.school-city {
+  display: none;
+}
+
+.course-link {
+  margin: 20px 0;
+  padding: 14px;
+  border: 1px solid black;
+  background-color: maroon;
+  color: beige;
+  display: inline-block;
+  width: 130px;
+}
+
+.welcome-message {
+  font-style: italic;
+  font-size: 18px;
+  color: #F3F3F3;
+  line-height: 28px;
+}
+
+em {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.footer-title {
+  text-align: center;
 }
 
 .biopic {
@@ -226,33 +243,7 @@ ul {
   border-radius: 100px;
 }
 
-img {
-  width: 100%;
-  height: auto;
-  max-width: 400px;
-  display: block;
-  margin: 20px auto;
-}
-
-/* Bar chart stuff */
-.chart div {
-  font: 10px sans-serif;
-  background-color: #4A4A4A;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  height: 12px;
-  color: white;
-  display: inline-block;
-}
-
-span {
-  padding: 5px;
-}
-
-#letsConnect {
-  text-align: center;
-}
+/* ----------------- media queries ------------------ */
 
 @media only screen and (min-width: 500px) {
   h1 {
@@ -260,26 +251,14 @@ span {
   }
 }
 
-@media only screen and (max-width: 750px) {
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
-  hr {
-    margin-top: 10px;
-  }
-}
-
-#map {
+.map {
   display: block;
   height: 100%;
   margin-left: 5%;
   margin-right: 5%;
 }
 
-#mapDiv {
+.mapDiv {
   height: 400px;
   width: 100%;
   padding-bottom: 5%;
@@ -287,43 +266,43 @@ span {
 }
 
 @media screen and (min-width: 600px) {
-  #education {
+  .education {
     display: -webkit-flex;
     -webkit-flex-wrap: wrap;
   }
 
   .education-entry {
-    width: 50%
-  }
-
-  .title-border {
-    width: 100%;
+    width: 50%;
   }
 
   .online {
     text-align: center;
   }
 
-  a.online.course-link {
+  .course-link {
     display: block;
     margin: 20px auto;
   }
 }
 
 @media only screen and (min-width: 750px) {
-  #skillsH3,
   .biopic {
     display: block;
   }
+
   h1,
   .role {
     display: inline;
   }
+
+  hr {
+    margin-top: 0;
+  }
 }
 
 @media only screen and (min-width: 900px) {
-  #header,
-  #letsConnect {
+  .header,
+  .letsConnect {
     border-left: 1px solid black;
     border-right: 1px solid black;
   }

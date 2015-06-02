@@ -12,22 +12,22 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLheaderName = '<h1 id="name" class="text-center uppercase">%data%</h1>';
-var HTMLheaderRole = '<div class="role text-center uppercase">%data%</div><hr/>';
+var HTMLheaderName = '<h1 class="name">%data%</h1>';
+var HTMLheaderRole = '<div class="role">%data%</div><hr/>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="uppercase">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="uppercase">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="uppercase">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="uppercase">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="uppercase">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="uppercase">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="uppercase">location</span><span class="white-text">%data%</span></li>';
+var HTMLcontactGeneric = '<li><span class="contact-keys">%contact%</span><span class="contact-values">%data%</span></li>';
+var HTMLmobile = '<li><span class="contact-keys">mobile</span><span class="contact-values">%data%</span></li>';
+var HTMLemail = '<li><span class="contact-keys">email</span><span class="contact-values">%data%</span></li>';
+var HTMLtwitter = '<li><span class="contact-keys">twitter</span><span class="contact-values">%data%</span></li>';
+var HTMLgithub = '<li><span class="contact-keys">github</span><span class="contact-values">%data%</span></li>';
+var HTMLblog = '<li><span class="contact-keys">blog</span><span class="contact-values">%data%</span></li>';
+var HTMLlocation = '<li><span class="contact-keys">location</span><span class="contact-values">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
-var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskillsStart = '<h3>Skills at a Glance:</h3><ul class="skills flex-box"></ul>';
+var HTMLskills = '<li class="flex-item"><span class="skill-items">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
@@ -56,7 +56,7 @@ var HTMLonlineDates = '<div class="online">%data%</div>';
 var HTMLonlineURL = '<a class="online course-link" href="%data%">Link to Course</a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
-var googleMap = '<div id="map"></div>';
+var googleMap = '<div class="map"></div>';
 
 
 /*
@@ -113,8 +113,8 @@ function initializeMap() {
   };
 
   // This next line makes `map` a new Google Map JavaScript Object and attaches it to
-  // <div id="map">, which is appended as part of an exercise late in the course.
-  map = new google.maps.Map(document.querySelector('#map'), mapOptions);
+  // <div class="map">, which is appended as part of an exercise late in the course.
+  map = new google.maps.Map(document.querySelector('.map'), mapOptions);
 
 
   /*
@@ -173,7 +173,7 @@ function initializeMap() {
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+      infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.
