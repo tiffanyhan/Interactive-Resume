@@ -1,11 +1,11 @@
 /* ---------------- general things ------------------- */
 
-* {
+body, div, h1, h2, h3, p, a, img {
   padding:0;
   margin:0;
-  box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .clearfix {
@@ -34,10 +34,7 @@ body {
 }
 
 .center-content {
-  padding-top: 2.5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 2.5%
+  padding: 2.5% 5%;
 }
 
 /* ----------------- main sections -------------------- */
